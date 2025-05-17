@@ -266,12 +266,8 @@ if hypothyroid_model_ready:
 with st.sidebar:
     selected = option_menu('Multiple Disease Prediction System',
 
-                           ['Diabetes Prediction',
-                            'Heart Disease Prediction',
-                            'Parkinsons Prediction',
-                            'Lung Cancer Prediction',
-                            'Hypothyroid Prediction'],
-                           icons = ['activity', 'heart', 'person', 'lungs', 'thermometer'],
+                           ['Diabetes Prediction', 'Heart Disease Prediction', 'Parkinsons Prediction', 'Lung Cancer Prediction', 'Hypothyroid Prediction', 'About Me'],
+                           icons = ['activity', 'heart', 'person', 'lungs', 'thermometer', 'person-circle'],
                            default_index = 0)
     
     # Add technical information in a collapsible section at the bottom of sidebar
@@ -1569,3 +1565,46 @@ if (selected == 'Hypothyroid Prediction'):
                 st.error("Please enter valid numerical values for all fields or use the 'Fill Example Values' button")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
+
+
+# About Me Page
+if selected == 'About Me':
+    st.title("👨‍💻 About the Developer")
+
+    # Profile picture (GitHub avatar)
+    st.image("https://github.com/Smr2005.png", width=180)
+
+    st.subheader("Sameer Shaik")
+    st.markdown("[📧 shaiksameershubhan@gmail.com](mailto:shaiksameershubhan@gmail.com)")
+
+    st.write("""
+    🎓 I’m a B.Tech student specializing in **Artificial Intelligence and Data Science** at **Aditya College of Engineering**.
+
+    I’ve developed innovative projects such as:
+    - 🤖 An AI-powered **Facial Attendance System**
+    - 🛠️ An IoT-based **Gas Leak Detection and Alert System**
+
+    I’m passionate about leveraging AI and data science to solve real-world problems and build smart, impactful systems.
+
+    ✍️ Outside of tech, I'm also a **poet and writer**, sharing stories and heartfelt poetry with the world.
+    """)
+
+    st.markdown("### 💼 Skills")
+    st.markdown("""
+    - 🐍 Python  
+    - 📊 Data Science  
+    - 📈 Power BI  
+    - 🗄️ SQL
+    """)
+
+    st.markdown("### 🔗 Connect with Me")
+
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaik-sameer-69a3422a8)")
+    with col2:
+        st.markdown("[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/Smr2005)")
+    with col3:
+        st.markdown("[![Instagram](https://img.shields.io/badge/Instagram-Personal-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/_shaik___sameer_shubhan)")
+    with col4:
+        st.markdown("[![Instagram](https://img.shields.io/badge/Instagram-Writings-8a3ab9?logo=instagram&logoColor=white)](https://www.instagram.com/s.m.r_writings)")

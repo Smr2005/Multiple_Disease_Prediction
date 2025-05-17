@@ -1,0 +1,2 @@
+streamlit run "C:\Users\Ellahi\Desktop\New folder\MultipleDiseasePrediction.py
+"

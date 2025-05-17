@@ -3,7 +3,7 @@
 import pickle
 import streamlit as st
 import sys
-import subprocess
+
 import importlib
 
 # Check if required packages are installed, if not install them
@@ -27,8 +27,8 @@ for package_name in required_packages.values():
             importlib.import_module(package_name)
     except ImportError:
         st.info(f"Installing required package: {package_name}...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", package_name])
-        st.rerun()
+
+
 
 # Now import after ensuring it's installed
 from streamlit_option_menu import option_menu
@@ -106,7 +106,7 @@ try:
 except ImportError as e:
     st.error(f"Error importing sklearn modules: {e}")
     st.info("Attempting to reinstall scikit-learn...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "scikit-learn"])
+
     # After reinstalling, try to import again
     try:
         import sklearn
@@ -124,7 +124,7 @@ except ImportError as e:
         st.error(f"Still having issues with scikit-learn: {e}")
         st.error("Please try restarting the application or installing scikit-learn manually.")
         sys.exit(1)  # Exit if sklearn cannot be imported after reinstall attempt
-    st.rerun()
+
 
 # Create a directory for saved models if it doesn't exist
 import os
